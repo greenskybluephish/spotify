@@ -1,5 +1,10 @@
+//uses token, gets lists of artist from API
+
+//JS for query data
 const getArtists = () => {
-  return fetch("https://api.spotify.com/v1/me/top/artists?time_range=long_term&limit=50", {
+  const timeRange = document.querySelector("#timeRangeInput").value;
+const artistNumber = document.querySelector("#artistNumberInput").value;
+  return fetch(`https://api.spotify.com/v1/me/top/artists?time_range=${timeRange}&limit=${artistNumber}`, {
  headers: {
    Accept: "application/json",
    Authorization: `Bearer ${_token}`,
@@ -8,12 +13,30 @@ const getArtists = () => {
 }).then(res => res.json()
 )}
 
-const artList = getArtists()
-console.table(artList['items'])
 
 
+//get database and new artists
 
-// const getArtists = () => {
+// const getArtists50 = () => {
+//    return fetch("https://api.spotify.com/v1/me/top/artists?time_range=long_term&limit=50", {
+//   headers: {
+//     Accept: "application/json",
+//     Authorization: `Bearer ${_token}`,
+//     "Content-Type": "application/json"
+//   }
+// }).then(res => res.json()
+// )}
+
+// const getDBA = () => 
+//   fetch("http://localhost:8088/items")
+//   .then(function(response) {
+//     return response.json();
+//   })
+  
+// getDBA()
+
+//get spotify data and post to json server!!
+// const getArtists50 = () => {
 //    return fetch("https://api.spotify.com/v1/me/top/artists?time_range=long_term&limit=50", {
 //   headers: {
 //     Accept: "application/json",
@@ -22,9 +45,10 @@ console.table(artList['items'])
 //   }
 // }).then(res => res.json()
 // ).then(list => {
+//   dataList = list.items
 //    return fetch("http://localhost:8088/items", {
 //      method: "POST",
-//      body: JSON.stringify(list),
+//      body: JSON.stringify(dataList),
 //      headers: {
 //        "Content-Type": "application/json"
 //      }
@@ -33,4 +57,4 @@ console.table(artList['items'])
 //  })
 // }
 
-// getArtists();
+// getArtists50();

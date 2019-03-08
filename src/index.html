@@ -8,19 +8,27 @@
    <link rel="stylesheet" href="styles/style.css">
 </head>
 <body>
+
+
+
    <fieldset>
-      <label for="length">Time Range</label>
-      <input type="text" id="input1" placeholder="short_term, medium_term, or long_term" size="35" />
+      <label>Select a Time Range</label>
+      <select id = "timeRangeInput">
+         <option value = "long_term">All time</option>
+         <option value = "medium_term">Previous 6 Months</option>
+        <option value = "short_term">Previous Month</option>
+      </select>
   </fieldset>
   <fieldset>
       <label for="numberArt">Number of Artists</label>
-      <input type="text" id="input2" placeholder="Enter a number up to 50" />
+      <input type="number" id="artistNumberInput" min="1" max="50" />
   </fieldset>
 
 
    
    <button id="button1" type="submit">Your Top Artists</button>
    <main id="container">
+
 
    </main>
    <script src="scripts/auth.js"></script>
