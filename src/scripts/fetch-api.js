@@ -54,9 +54,5 @@ const getArtists50 = () => {
      headers: {
        "Content-Type": "application/json"
      }
-   })
-   .then(response => response.json())
- })
-}
-
+})})}
 getArtists50();
