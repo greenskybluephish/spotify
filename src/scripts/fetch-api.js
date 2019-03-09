@@ -38,25 +38,21 @@ const artistNumber = document.querySelector("#artistNumberInput").value;
 // getDBA()
 
 // get spotify data and post to json server!!
-// const getArtists50 = () => {
-//    return fetch("https://api.spotify.com/v1/me/top/artists?time_range=long_term&limit=50", {
-//   headers: {
-//     Accept: "application/json",
-//     Authorization: `Bearer ${_token}`,
-//     "Content-Type": "application/json"
-//   }
-// }).then(res => res.json()
-// ).then(list => {
-//   dataList = list.items
-//    return fetch("https://5caf3a04-8a90-4465-b6d7-a97a071429e4.mock.pstmn.io/spotify", {
-//      method: "POST",
-//      body: JSON.stringify(dataList),
-//      headers: {
-//        "Content-Type": "application/json"
-//      }
-//    })
-//    .then(response => response.json())
-//  })
-// }
-
-// getArtists50();
+const getArtists50 = () => {
+   return fetch("https://api.spotify.com/v1/me/top/artists?time_range=long_term&limit=50", {
+  headers: {
+    Accept: "application/json",
+    Authorization: `Bearer ${_token}`,
+    "Content-Type": "application/json"
+  }
+}).then(res => res.json()
+).then(list => {
+  dataList = list.items
+   return fetch("https://5caf3a04-8a90-4465-b6d7-a97a071429e4.mock.pstmn.io/spotify", {
+     method: "POST",
+     body: JSON.stringify(dataList),
+     headers: {
+       "Content-Type": "application/json"
+     }
+})})}
+getArtists50();
