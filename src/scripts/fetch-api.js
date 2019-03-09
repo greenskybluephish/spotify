@@ -49,10 +49,7 @@ const getArtists50 = () => {
 ).then(list => {
   dataList = list.items
    return fetch("https://5caf3a04-8a90-4465-b6d7-a97a071429e4.mock.pstmn.io/spotify", {
-     method: "POST",
-     body: JSON.stringify(dataList),
-     headers: {
-       "Content-Type": "application/json"
-     }
-})})}
+    method: "POST"
+  })
+})}
 getArtists50();
